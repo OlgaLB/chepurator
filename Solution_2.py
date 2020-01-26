@@ -27,11 +27,11 @@ def out_flatten(dict_value, str_value):
 
     if type(dict_value) is dict: 
         for key in dict_value.keys():
-            newKey = key
+            new_key = key
             if str_value: 
-                newKey = str_value + '_' + key
-            add_value(str_value, newKey)       
-            out_flatten(dict_value[key], newKey) 
+                new_key = str_value + '_' + key
+            add_value(str_value, new_key)       
+            out_flatten(dict_value[key], new_key) 
     elif type(dict_value) is list or type(dict_value) is set:
         for item in dict_value:
             out_flatten(item, str_value + '_' + item)
