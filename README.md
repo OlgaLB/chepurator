@@ -1,3 +1,8 @@
+Description
+-----------
+
+Solution_1.py and Solution_2.py are the files with the code which solve correspondingly Challenge 1 and 2.
+
 Installation
 ------------
 
