@@ -37,19 +37,20 @@ def get_docs_quantity_by_status():
 def get_doc_details_by_status(status):
 
     status_details_list=[]
-    status_details_dict={}
     try:
         for data_item in documents_json['payload']['items']:
             if data_item['status'] == status:
                 status_details_dict = copy.deepcopy(data_item)
                 del status_details_dict['status']
                 status_details_list.append(status_details_dict)
-        return(status_details_list)
 
     except KeyError:
         pass
     finally:
-        return status_details_list
+        if len(status_details_list) == 0:
+            return {}
+        else:
+            return status_details_list
 
 
 # Problem 3
