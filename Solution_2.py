@@ -3,8 +3,8 @@ import requests
 
 output_dict = {}
 
-def get_json_from_url(page_url):
 
+def get_json_from_url(page_url):
     response = requests.get(page_url)
     page_json = response.json()
    
@@ -12,7 +12,6 @@ def get_json_from_url(page_url):
 
 
 def add_value(key, value):
-  
     try:
         if key != '':
             if key not in output_dict:
@@ -24,7 +23,6 @@ def add_value(key, value):
 
 
 def out_flatten(dict_value, str_value):
-
     if type(dict_value) is dict: 
         for key in dict_value.keys():
             new_key = key
@@ -42,7 +40,6 @@ def out_flatten(dict_value, str_value):
 
 
 if __name__ == "__main__":
-
     json = get_json_from_url("https://raw.githubusercontent.com/omni-us/coding-challenges-resources/master/python-developer/sample-1.json")
     out_flatten(json, '')
 
