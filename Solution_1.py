@@ -3,14 +3,12 @@ import copy
 
 
 documents_url = "https://raw.githubusercontent.com/omni-us/coding-challenges-resources/master/python-developer/api-response.json"
-
 response = requests.get(documents_url)
 documents_json = response.json()
 
 
 # Problem 1
 def get_docs_quantity_by_status():
-    
     statuses_dict={}
     try:
         keys = []
@@ -35,7 +33,6 @@ def get_docs_quantity_by_status():
 
 # Problem 2
 def get_doc_details_by_status(status):
-
     status_details_list=[]
     try:
         for data_item in documents_json['payload']['items']:
@@ -55,7 +52,6 @@ def get_doc_details_by_status(status):
 
 # Problem 3
 def get_doc_details_by_filename(filename):
-
     file_details_dict={}
     try:
         for data_item in documents_json['payload']['items']:
@@ -71,7 +67,6 @@ def get_doc_details_by_filename(filename):
 
 
 if __name__ == "__main__":
-
     get_docs_quantity_by_status()
     get_doc_details_by_status('VALIDATED')
     get_doc_details_by_filename('77.pdf')
